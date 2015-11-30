@@ -1,0 +1,57 @@
+[globals]
+# IP-address of the IP Configuration port
+fb=192.168.1.222
+# Which port to use for TDMoE Traffic (1 or 2)
+port=1
+# Which destination MAC address for TDMoE Traffic?
+server=00:11:22:33:44:55
+# For 2.0 version firmware/hardware and above, specify priorities as
+# priorities=0,1,2,3
+# or for all internal timing
+# priorities=0,0,0,0
+
+
+[span1]
+framing=ccs
+encoding=hdb3
+crc4
+#rbs
+#slave
+# Do not use slave or master with 2.0 and above firmware.
+
+[span2]
+framing=ccs
+encoding=hdb3
+#shorthaul=1
+#rbs
+#master
+#loopback
+
+[span3]
+framing=ccs
+encoding=hdb3
+slave
+#longhaul=2
+#rbs
+
+[span4]
+framing=ccs
+encoding=hdb3
+#slave
+#rbs
+#dejitter 
+
+# DSP Section is absolutely NOT required... 
+# It does the proper mapping (RBS/PRI) if you leave it out
+# The dspdisabled flag will completely ignore a DSP
+#[dsp]
+#dspdisabled
+#dsp=ulaw
+#voiceA=1-23
+#data=24
+#voiceA=25-47
+#data=48
+#voiceA=49-71
+#data=72
+#voiceA=73-95
+#data=96
